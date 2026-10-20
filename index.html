@@ -33,13 +33,18 @@
 </head>
 <body>
 
+  <!-- Floating Ambient Glowing Orbs -->
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+
   <!-- Header -->
   <header class="header">
     <div class="container">
       <div class="nav-wrapper">
         <a href="index.html" class="brand">
           <img src="assets/icon-512.png" alt="MediBell Icon" class="brand-icon">
-          <span>MediBell</span>
+          <span>MediBell <span class="bell-shake-anim">🔔</span></span>
         </a>
 
         <ul class="nav-links" id="nav-links">
@@ -71,10 +76,9 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-glow"></div>
     <div class="container">
       <div class="hero-grid">
-        <div class="hero-content">
+        <div class="hero-content reveal">
           <div class="badge badge-mint">
             <span>🛡️ 100% Offline & Private · No Internet Needed</span>
           </div>
@@ -124,8 +128,15 @@
           </div>
         </div>
 
-        <div class="mockup-wrapper">
-          <div class="phone-device">
+        <!-- Phone Showcase with 3D Tilt & Pulsing Soundwave Rings -->
+        <div class="mockup-wrapper reveal reveal-scale delay-1">
+          <div class="soundwave-rings">
+            <div class="soundwave-ring ring-1"></div>
+            <div class="soundwave-ring ring-2"></div>
+            <div class="soundwave-ring ring-3"></div>
+          </div>
+
+          <div class="phone-device" id="phone-mockup">
             <div class="phone-notch"></div>
             <div class="phone-screen">
               <img src="assets/screenshots/02_alarm.png" alt="MediBell Alarm Screen">
@@ -150,27 +161,38 @@
           </div>
         </div>
       </div>
+
+      <!-- Interactive Alarm Simulation Trigger -->
+      <div class="alarm-sim-bar reveal delay-2">
+        <button id="sim-alarm-btn" class="sim-btn" aria-label="Simulate Medicine Alarm">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          Simulate Alarm Ringing & Vibration
+        </button>
+      </div>
     </div>
   </section>
 
-  <!-- Key Statistics Banner -->
+  <!-- Key Statistics Banner with Animated Number Counters -->
   <section class="stats-strip">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-value">0 KB</div>
+        <div class="stat-item reveal delay-1">
+          <div class="stat-value" data-counter="0" data-suffix=" KB">0 KB</div>
           <div class="stat-label">Data Sent to Cloud (Zero Network Permission)</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-value">100%</div>
+        <div class="stat-item reveal delay-2">
+          <div class="stat-value" data-counter="100" data-suffix="%">100%</div>
           <div class="stat-label">Offline & Private on Your Phone</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-value">0 Ads</div>
+        <div class="stat-item reveal delay-3">
+          <div class="stat-value" data-counter="0" data-suffix=" Ads">0 Ads</div>
           <div class="stat-label">Completely Ad-Free & Distraction-Free</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-value">AES-256</div>
+        <div class="stat-item reveal delay-4">
+          <div class="stat-value" data-counter="256" data-prefix="AES-">AES-256</div>
           <div class="stat-label">Android Keystore Hardware Encryption</div>
         </div>
       </div>
@@ -180,7 +202,7 @@
   <!-- Features Grid -->
   <section class="features-section" id="features">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="section-tag">Engineered For Reliability</div>
         <h2 class="section-title">Everything you need to stay on track with your health</h2>
         <p class="section-desc">
@@ -191,7 +213,7 @@
 
       <div class="features-grid">
         <!-- Feature 1 -->
-        <div class="feature-card highlight">
+        <div class="feature-card highlight reveal delay-1">
           <div class="feature-icon-box">🔔</div>
           <h3>Full-Screen Lock Alarm</h3>
           <p>
@@ -206,7 +228,7 @@
         </div>
 
         <!-- Feature 2 -->
-        <div class="feature-card">
+        <div class="feature-card reveal delay-2">
           <div class="feature-icon-box">🗓️</div>
           <h3>Flexible Medical Schedules</h3>
           <p>
@@ -221,7 +243,7 @@
         </div>
 
         <!-- Feature 3 -->
-        <div class="feature-card">
+        <div class="feature-card reveal delay-3">
           <div class="feature-icon-box">📦</div>
           <h3>Pill Stock & Refill Alerts</h3>
           <p>
@@ -236,7 +258,7 @@
         </div>
 
         <!-- Feature 4 -->
-        <div class="feature-card">
+        <div class="feature-card reveal delay-1">
           <div class="feature-icon-box">🩺</div>
           <h3>Health Vitals & Doctor Reports</h3>
           <p>
@@ -251,7 +273,7 @@
         </div>
 
         <!-- Feature 5 -->
-        <div class="feature-card">
+        <div class="feature-card reveal delay-2">
           <div class="feature-icon-box">👓</div>
           <h3>Elder Friendly & High Contrast</h3>
           <p>
@@ -266,7 +288,7 @@
         </div>
 
         <!-- Feature 6 -->
-        <div class="feature-card highlight">
+        <div class="feature-card highlight reveal delay-3">
           <div class="feature-icon-box">🔒</div>
           <h3>100% Privacy & Keystore Security</h3>
           <p>
@@ -286,20 +308,20 @@
   <!-- Screenshot Gallery / Showcase -->
   <section class="showcase-section" id="showcase">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="section-tag">Visual Walkthrough</div>
         <h2 class="section-title">Designed with clarity, warmth, and care</h2>
         <p class="section-desc">Take a look inside the MediBell experience across daily routine, alarms, and health tracking.</p>
       </div>
 
-      <div class="showcase-tabs">
+      <div class="showcase-tabs reveal delay-1">
         <button class="showcase-tab active" data-filter="all">All Screens</button>
         <button class="showcase-tab" data-filter="alarm">Alarms & Today</button>
         <button class="showcase-tab" data-filter="schedule">Schedules</button>
         <button class="showcase-tab" data-filter="health">Health & Reports</button>
       </div>
 
-      <div class="showcase-carousel">
+      <div class="showcase-carousel reveal reveal-fade-in delay-2">
         <div class="showcase-item" data-category="alarm">
           <img src="assets/screenshots/01_today.png" alt="Today Schedule" loading="lazy">
           <div class="showcase-info">
@@ -370,13 +392,13 @@
   <!-- Privacy Comparison Table -->
   <section class="comparison-section" id="privacy-first">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="section-tag">Privacy By Architecture</div>
         <h2 class="section-title">How MediBell compares to other medication apps</h2>
         <p class="section-desc">Health data is deeply personal. We believe it should stay solely between you and your phone.</p>
       </div>
 
-      <div class="comparison-card">
+      <div class="comparison-card reveal delay-1">
         <table class="comparison-table">
           <thead>
             <tr>
@@ -425,14 +447,14 @@
   <!-- FAQ Section -->
   <section class="faq-section" id="faq">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="section-tag">Frequently Asked Questions</div>
         <h2 class="section-title">Got questions? We have clear answers.</h2>
         <p class="section-desc">Everything you need to know about how MediBell keeps your medication schedule on track.</p>
       </div>
 
       <div class="faq-list">
-        <div class="faq-item open">
+        <div class="faq-item open reveal delay-1">
           <button class="faq-question">
             <span>Will the alarm ring if my phone is locked or set to silent?</span>
             <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -447,7 +469,7 @@
           </div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item reveal delay-2">
           <button class="faq-question">
             <span>Why does MediBell have no internet permission?</span>
             <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -461,7 +483,7 @@
           </div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item reveal delay-3">
           <button class="faq-question">
             <span>Can I export reports for my doctor?</span>
             <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -475,7 +497,7 @@
           </div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item reveal delay-1">
           <button class="faq-question">
             <span>Does MediBell speak medication names in Hindi?</span>
             <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -489,7 +511,7 @@
           </div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item reveal delay-2">
           <button class="faq-question">
             <span>How do I back up my medicines if there is no cloud?</span>
             <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -503,7 +525,7 @@
           </div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item reveal delay-3">
           <button class="faq-question">
             <span>Is MediBell a certified medical device?</span>
             <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -523,7 +545,7 @@
   <!-- Download CTA Banner -->
   <section class="cta-banner" id="download">
     <div class="container">
-      <div class="cta-box">
+      <div class="cta-box reveal reveal-scale">
         <h2>Take Control of Your Health Schedule Today</h2>
         <p>No registration, no tracking, no subscription fees. Download MediBell now and set your first reminder in seconds.</p>
         <div class="cta-actions">
@@ -599,4 +621,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-
