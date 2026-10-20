@@ -18,17 +18,15 @@ website/
 ## How to Deploy (Free & Instant)
 
 ### Option 1: GitHub Pages (Recommended)
-1. In your public repository (e.g. `RhythmSoft/medibell-privacy`):
-   - Copy all files from this `website/` directory into that repository.
-   - Commit and push to `main`.
-2. Go to repository **Settings → Pages**:
+1. In repository `RhythmSoft/medibell.web`:
+   - Go to **Settings → Pages**
    - Build and deployment: **Deploy from a branch**
    - Branch: `main` / `/ (root)`
    - Click **Save**.
-3. Your live URLs:
-   - **Website / Landing Page:** `https://<username>.github.io/medibell-privacy/`
-   - **Privacy Policy:** `https://<username>.github.io/medibell-privacy/privacy.html`
-   - **Terms:** `https://<username>.github.io/medibell-privacy/terms.html`
+2. Live URLs:
+   - **Website / Landing Page:** `https://rhythmsoft.github.io/medibell.web/`
+   - **Privacy Policy:** `https://rhythmsoft.github.io/medibell.web/privacy.html`
+   - **Terms:** `https://rhythmsoft.github.io/medibell.web/terms.html`
 
 ### Option 2: Vercel or Netlify
 - Drag and drop this `website/` folder directly to [app.netlify.com/drop](https://app.netlify.com/drop) or deploy via Vercel for free custom SSL hosting in 10 seconds.
