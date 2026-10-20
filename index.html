@@ -3,67 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MediBell — Pill Reminder Alarm | Private & Offline Medicine Tracker</title>
-  <meta name="description" content="MediBell is a 100% private medication reminder that rings like an alarm even when your phone is locked or on silent. No account, no ads, no internet required.">
-  <meta name="keywords" content="medication reminder, pill reminder alarm, medicine tracker, offline pill alarm, private medication tracker, elder medicine reminder, dawai reminder">
+  <title>MediBell — Dawai ka time, kabhi miss nahi | Pill Reminder Alarm</title>
+  <meta name="description" content="MediBell is an offline, privacy-first medication reminder that rings like an alarm even when your phone is locked. No account, no ads, no internet required.">
+  <meta name="keywords" content="medication reminder, pill reminder alarm, dawai reminder, offline pill alarm, elder medicine reminder, medibell">
   
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="MediBell — Pill Reminder Alarm | Private & Offline">
-  <meta property="og:description" content="Never miss a dose. Medicine reminder that rings like an alarm — even when your phone is locked. 100% Offline and Private.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="MediBell — Dawai ka time, kabhi miss nahi">
+  <meta property="og:description" content="Rings like a real alarm even on lock screen. 100% offline, zero ads, zero trackers.">
   <meta property="og:image" content="assets/feature-graphic-1024x500.png">
   
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MediBell — Pill Reminder Alarm">
-  <meta name="twitter:description" content="Rings like a real alarm clock. 100% offline, zero ads, zero tracking, Keystore encrypted.">
-  <meta name="twitter:image" content="assets/feature-graphic-1024x500.png">
-
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/medibell_mark.svg">
   <link rel="alternate icon" type="image/png" href="assets/icon-512.png">
 
-  <!-- Google Fonts: Figtree -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Floating Ambient Glowing Orbs -->
-  <div class="ambient-orb orb-1"></div>
-  <div class="ambient-orb orb-2"></div>
-  <div class="ambient-orb orb-3"></div>
-
   <!-- Header -->
-  <header class="header">
+  <header class="site-header">
     <div class="container">
-      <div class="nav-wrapper">
-        <a href="index.html" class="brand">
-          <img src="assets/icon-512.png" alt="MediBell Icon" class="brand-icon">
-          <span>MediBell <span class="bell-shake-anim">🔔</span></span>
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/icon-512.png" alt="MediBell Logo" class="brand-icon-img">
+          <span>MediBell</span>
         </a>
 
-        <ul class="nav-links" id="nav-links">
+        <ul class="nav-menu" id="nav-menu">
           <li><a href="#features" class="nav-link">Features</a></li>
-          <li><a href="#showcase" class="nav-link">Screenshots</a></li>
-          <li><a href="#privacy-first" class="nav-link">Privacy First</a></li>
+          <li><a href="#how-it-works" class="nav-link">How it works</a></li>
+          <li><a href="#privacy" class="nav-link">Privacy</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
           <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
         </ul>
 
-        <div class="nav-actions">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="header-actions">
+          <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
-          <a href="#download" class="btn btn-primary btn-sm">Get App</a>
-          <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <a href="#download" class="btn-header-cta">Download</a>
+          <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -74,545 +62,358 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- 1. HERO SECTION (Matches Claude Artifact UI Exactly) -->
+  <section class="hero-wrapper">
     <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content reveal">
-          <div class="badge badge-mint">
-            <span>🛡️ 100% Offline & Private · No Internet Needed</span>
-          </div>
-          <h1 class="hero-title">
-            Never Miss a Dose.<br>
-            <span>Rings Like an Alarm</span> Even on Lock Screen.
-          </h1>
-          <p class="hero-desc">
-            A reliable, privacy-first pill reminder designed for you and your elders. 
-            Rings loud and clear even when silent, tracks medicine stock, logs health vitals, 
-            and keeps your medical records strictly encrypted on your phone.
-          </p>
-
-          <div class="hero-ctas">
-            <a href="#download" class="btn btn-primary btn-lg">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-1.637V3.451c0-.623.23-1.19.61-1.637zM15.207 13.414l2.424 2.424-11.45 6.611 9.026-9.035zm0-2.828L6.18 1.551l11.45 6.611-2.423 2.424zm1.414 1.414l3.187 1.84c.884.51.884 1.348 0 1.859l-3.187 1.84-2.122-2.121 2.122-2.718z"/>
-              </svg>
-              Google Play
-            </a>
-            <a href="privacy.html" class="btn btn-secondary btn-lg">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-              Privacy Policy
-            </a>
-          </div>
-
-          <div class="hero-trust">
-            <div class="trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Zero Ads & Zero Trackers
+      <div class="hero-box">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-columns">
+          
+          <!-- Left Column Content -->
+          <div class="hero-text-col">
+            <div class="hero-pill-badge">
+              <span class="dot"></span>
+              <span>NO ADS · NO SIGNUP · 100% OFFLINE</span>
             </div>
-            <div class="trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Keystore Encrypted
-            </div>
-            <div class="trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Hindi & English Voice
-            </div>
-            <div class="trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Doctor PDF Reports
-            </div>
-          </div>
-        </div>
 
-        <!-- Phone Showcase with 3D Tilt & Pulsing Soundwave Rings -->
-        <div class="mockup-wrapper reveal reveal-scale delay-1">
-          <div class="soundwave-rings">
-            <div class="soundwave-ring ring-1"></div>
-            <div class="soundwave-ring ring-2"></div>
-            <div class="soundwave-ring ring-3"></div>
-          </div>
+            <h1 class="hero-headline">
+              Dawai ka time,<br>
+              <span>kabhi miss nahi.</span>
+            </h1>
 
-          <div class="phone-device" id="phone-mockup">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <img src="assets/screenshots/02_alarm.png" alt="MediBell Alarm Screen">
+            <p class="hero-subtitle">
+              Medication reminder that rings like an alarm — even when your phone is locked, 
+              on silent, or you are using another app.
+            </p>
+
+            <div class="hero-btn-group">
+              <a href="#download" class="btn-hero-orange">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-1.637V3.451c0-.623.23-1.19.61-1.637zM15.207 13.414l2.424 2.424-11.45 6.611 9.026-9.035zm0-2.828L6.18 1.551l11.45 6.611-2.423 2.424zm1.414 1.414l3.187 1.84c.884.51.884 1.348 0 1.859l-3.187 1.84-2.122-2.121 2.122-2.718z"/>
+                </svg>
+                Download MediBell
+              </a>
+              <a href="#features" class="btn-hero-outline">
+                See how it works
+              </a>
             </div>
           </div>
 
-          <!-- Floating Badges -->
-          <div class="float-card top-right">
-            <div class="float-icon">⏰</div>
-            <div class="float-text">
-              <strong>Loud Alarm Active</strong>
-              <span>Metformin 500mg · After Food</span>
+          <!-- Right Column: Interactive Phone Mockup -->
+          <div class="hero-mockup-col">
+            <div class="phone-card-container" id="hero-phone">
+              
+              <!-- Floating Time Clock Pill -->
+              <div class="clock-pill">
+                <span>⏰</span>
+                <span>12:00</span>
+              </div>
+
+              <!-- Phone Mockup Screen -->
+              <div class="phone-mockup-screen">
+                <div class="alarm-bell-icon">🔔</div>
+                <div class="alarm-time-display">12:00 PM</div>
+                <div class="alarm-med-title">Metformin 500mg</div>
+                <div class="alarm-med-instruction">1 tablet · After lunch</div>
+
+                <div class="alarm-actions-mock">
+                  <button class="alarm-btn-taken" id="mock-take-btn">✓ Taken</button>
+                  <div class="alarm-btn-secondary-row">
+                    <button class="alarm-btn-snooze">Snooze</button>
+                    <button class="alarm-btn-skip">Skip</button>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          <div class="float-card bottom-left">
-            <div class="float-icon">📊</div>
-            <div class="float-text">
-              <strong>98% Adherence</strong>
-              <span>All 3 doses taken today</span>
-            </div>
-          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Interactive Alarm Simulation Trigger -->
-      <div class="alarm-sim-bar reveal delay-2">
-        <button id="sim-alarm-btn" class="sim-btn" aria-label="Simulate Medicine Alarm">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+  <!-- 2. HORIZONTAL TRUST TICKER STRIP -->
+  <section class="ticker-bar-section">
+    <div class="container">
+      <div class="ticker-strip">
+        <span>NO ACCOUNTS</span>
+        <span class="ticker-dot"></span>
+        <span>NO AD NETWORKS</span>
+        <span class="ticker-dot"></span>
+        <span>100% PRIVATE</span>
+        <span class="ticker-dot"></span>
+        <span>ENCRYPTED</span>
+        <span class="ticker-dot"></span>
+        <span>WORKS OFFLINE</span>
+        <span class="ticker-dot"></span>
+        <span>NO SUBSCRIPTIONS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. BENTO GRID SECTION: "Everything a medicine routine needs." -->
+  <section class="bento-section" id="features">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="bento-main-title">Everything a medicine<br>routine needs.</h2>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Card 1: Large Deep Green Alarm Card (Spans Left Column) -->
+        <div class="bento-card bento-alarm-card">
+          <div class="bento-alarm-header">
+            <div>
+              <h3>Not a quiet ping. A full-screen alarm.</h3>
+              <p style="margin-top: 10px;">
+                Rings loud and clear like a real alarm clock. Can speak medicine names in Hindi and English so you never miss a dose.
+              </p>
+            </div>
+            <div class="bento-alarm-bell-circle">🔔</div>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--mint); font-weight: 600;">
+            • Bypasses silent mode for critical medicines
+          </div>
+        </div>
+
+        <!-- Card 2: Schedules & Rules Card (Top Right) -->
+        <div class="bento-card bento-schedule-card">
+          <h3>Daily, weekdays, every few days, cycles (21/7).</h3>
+          <p>Flexible schedule options for recurring or as-needed SOS medicines with customizable rest gaps.</p>
+          
+          <div class="weekday-chips">
+            <span class="day-chip active">M</span>
+            <span class="day-chip active">T</span>
+            <span class="day-chip active">W</span>
+            <span class="day-chip active">T</span>
+            <span class="day-chip active">F</span>
+            <span class="day-chip">S</span>
+            <span class="day-chip">S</span>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--ink-muted); font-weight: 600;">
+            Before breakfast · After lunch · Bedtime
+          </div>
+        </div>
+
+        <!-- Bottom Row: 3 Bento Cards -->
+        <div class="bento-bottom-row">
+          
+          <!-- Card 3: Adherence Chart -->
+          <div class="bento-card">
+            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--ink);">
+              See what's taken — and what's missed.
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--ink-secondary);">
+              Weekly adherence charts, dose history logs, and doctor PDF reports.
+            </p>
+            <div class="adherence-chart-box">
+              <div class="chart-bar high" title="Monday: 100%"></div>
+              <div class="chart-bar high" title="Tuesday: 100%"></div>
+              <div class="chart-bar mid" title="Wednesday: 80%"></div>
+              <div class="chart-bar high" title="Thursday: 100%"></div>
+              <div class="chart-bar miss" title="Friday: Missed 1"></div>
+              <div class="chart-bar high" title="Saturday: 100%"></div>
+              <div class="chart-bar high" title="Sunday: 100%"></div>
+            </div>
+          </div>
+
+          <!-- Card 4: Pill Stock Refill -->
+          <div class="bento-card">
+            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--ink);">
+              Stock drops with every dose.
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--ink-secondary);">
+              We automatically calculate your supply and nudge you days before it runs out.
+            </p>
+            <div>
+              <span class="stock-pill-badge">💊 14 pills left · Refill in 3 days</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Elder Mode -->
+          <div class="bento-card">
+            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--ink);">
+              Big text, oversized icons, Elder Mode.
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--ink-secondary);">
+              Simple high-contrast design specifically tailored for elderly parents.
+            </p>
+            <div class="elder-preview-box">
+              <span class="elder-font-sample">Aa</span>
+              <span class="elder-toggle-badge">Elder Mode ON</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. STEPS SECTION: "Set up in two minutes" -->
+  <section class="setup-section" id="how-it-works">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="bento-main-title">Set up in two minutes</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num-pill">01</div>
+          <h4>Add your medicine</h4>
+          <p>Type the name, choose strength and dosage type (pill, drops, syrup, injection).</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num-pill">02</div>
+          <h4>Pick time and days</h4>
+          <p>Set alarm times and instructions (before food, after meal, empty stomach).</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num-pill">03</div>
+          <h4>Tap "Done" — that's it.</h4>
+          <p>No account creation, no password, no email verification. Ready instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PRIVACY GUARANTEE BANNER: "Your medicines are your business." -->
+  <section class="privacy-banner-section" id="privacy">
+    <div class="container">
+      <div class="privacy-banner-box">
+        
+        <div class="privacy-banner-content">
+          <h3>Your medicines are your business.</h3>
+          <p>
+            MediBell has no internet permission. Everything stays on your phone, encrypted with Android Keystore. 
+            No accounts, no advertisements, zero tracking.
+          </p>
+
+          <div class="privacy-pills-row">
+            <span class="priv-pill">🔐 Encrypted SQLite</span>
+            <span class="priv-pill">🚫 No telemetry</span>
+            <span class="priv-pill">🛡️ Zero cloud</span>
+            <a href="privacy.html" class="priv-pill" style="background: rgba(127,224,196,0.2); border-color: var(--mint); color: var(--mint);">
+              Read Full Privacy Policy &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="privacy-shield-col">
+          <div class="shield-icon-circle">🛡️</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FAQ SECTION: "Questions" -->
+  <section class="faq-wrap-section" id="faq">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="bento-main-title">Questions</h2>
+      </div>
+
+      <div class="faq-accordion-list">
+        
+        <div class="faq-card open">
+          <button class="faq-header-btn">
+            <span>Will it ring if my phone is on silent?</span>
+            <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content-body">
+            <p>
+              Yes. For critical medicines marked with high priority, MediBell can bypass silent mode and ring 
+              at full volume with an exact alarm intent, waking your lock screen like an alarm clock.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <button class="faq-header-btn">
+            <span>Do I need to sign up to use the app?</span>
+            <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content-body">
+            <p>
+              No. MediBell requires absolutely no account, email, or phone number. You install the app and start 
+              adding your medicines immediately.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <button class="faq-header-btn">
+            <span>Is it free? Are there ads?</span>
+            <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content-body">
+            <p>
+              MediBell is 100% free, has zero advertisements, and does not require any paid subscription.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <button class="faq-header-btn">
+            <span>Can I export data for my doctor?</span>
+            <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content-body">
+            <p>
+              Yes. You can generate a printable, clinical PDF report summarizing your medications, adherence 
+              history, and health logs to share with your physician or pharmacist.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. BOTTOM CTA SECTION: "Agli dose se shuru karein." -->
+  <section class="bottom-cta-section" id="download">
+    <div class="container">
+      <div class="bottom-cta-box">
+        <h2>Agli dose se shuru karein.</h2>
+        <p>Download MediBell — 100% free, no ads, no sign-up.</p>
+
+        <a href="https://play.google.com/store/apps/details?id=com.rhythm.medibell" class="btn-cta-dark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-1.637V3.451c0-.623.23-1.19.61-1.637zM15.207 13.414l2.424 2.424-11.45 6.611 9.026-9.035zm0-2.828L6.18 1.551l11.45 6.611-2.423 2.424zm1.414 1.414l3.187 1.84c.884.51.884 1.348 0 1.859l-3.187 1.84-2.122-2.121 2.122-2.718z"/>
           </svg>
-          Simulate Alarm Ringing & Vibration
-        </button>
+          Download MediBell
+        </a>
+
+        <div class="cta-subnote">(Free on Android · No sign-up required)</div>
       </div>
     </div>
   </section>
 
-  <!-- Key Statistics Banner with Animated Number Counters -->
-  <section class="stats-strip">
+  <!-- 8. FOOTER -->
+  <footer class="site-footer">
     <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item reveal delay-1">
-          <div class="stat-value" data-counter="0" data-suffix=" KB">0 KB</div>
-          <div class="stat-label">Data Sent to Cloud (Zero Network Permission)</div>
+      <div class="footer-top">
+        <div class="brand-logo">
+          <img src="assets/icon-512.png" alt="MediBell Logo" class="brand-icon-img">
+          <span>MediBell</span>
         </div>
-        <div class="stat-item reveal delay-2">
-          <div class="stat-value" data-counter="100" data-suffix="%">100%</div>
-          <div class="stat-label">Offline & Private on Your Phone</div>
-        </div>
-        <div class="stat-item reveal delay-3">
-          <div class="stat-value" data-counter="0" data-suffix=" Ads">0 Ads</div>
-          <div class="stat-label">Completely Ad-Free & Distraction-Free</div>
-        </div>
-        <div class="stat-item reveal delay-4">
-          <div class="stat-value" data-counter="256" data-prefix="AES-">AES-256</div>
-          <div class="stat-label">Android Keystore Hardware Encryption</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Features Grid -->
-  <section class="features-section" id="features">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag">Engineered For Reliability</div>
-        <h2 class="section-title">Everything you need to stay on track with your health</h2>
-        <p class="section-desc">
-          Most reminder apps fail because phone batteries put them to sleep or notifications get lost. 
-          MediBell is built from the ground up as a clinical-grade alarm system.
-        </p>
+        <ul class="footer-nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Disclaimer</a></li>
+          <li><a href="mailto:devlopersa30@gmail.com">Contact</a></li>
+        </ul>
       </div>
 
-      <div class="features-grid">
-        <!-- Feature 1 -->
-        <div class="feature-card highlight reveal delay-1">
-          <div class="feature-icon-box">🔔</div>
-          <h3>Full-Screen Lock Alarm</h3>
-          <p>
-            When medicine time arrives, MediBell wakes your phone with a full-screen alarm, 
-            showing medicine name, dosage, and food instructions.
-          </p>
-          <ul class="feature-list">
-            <li>Rings even when phone is locked or muted</li>
-            <li>Take, Snooze or Skip directly from lock screen</li>
-            <li>Voice announcement in English or Hindi</li>
-          </ul>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="feature-card reveal delay-2">
-          <div class="feature-icon-box">🗓️</div>
-          <h3>Flexible Medical Schedules</h3>
-          <p>
-            Handles complex doctor prescriptions easily: daily, alternating days, specific weekdays, 
-            or multi-week cycles (e.g., 21 days on, 7 days off).
-          </p>
-          <ul class="feature-list">
-            <li>Multiple times a day with meal tags</li>
-            <li>SOS / As-Needed medicines with minimum safety gap</li>
-            <li>Course durations (e.g. 5 days of Antibiotics)</li>
-          </ul>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="feature-card reveal delay-3">
-          <div class="feature-icon-box">📦</div>
-          <h3>Pill Stock & Refill Alerts</h3>
-          <p>
-            Every time you mark a dose as taken, MediBell automatically decrements your stock count 
-            and alerts you days before you run out.
-          </p>
-          <ul class="feature-list">
-            <li>Calculates remaining days of supply</li>
-            <li>Customizable low-stock notification threshold</li>
-            <li>Refill button with quick quantity reload</li>
-          </ul>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="feature-card reveal delay-1">
-          <div class="feature-icon-box">🩺</div>
-          <h3>Health Vitals & Doctor Reports</h3>
-          <p>
-            Log daily vitals like Blood Pressure, Pulse, Blood Sugar, and Body Weight. 
-            View beautiful adherence trends and export printable PDFs.
-          </p>
-          <ul class="feature-list">
-            <li>Weekly and monthly adherence percentage</li>
-            <li>One-click PDF medical report for your doctor</li>
-            <li>Smart miss patterns (e.g. missed night doses)</li>
-          </ul>
-        </div>
-
-        <!-- Feature 5 -->
-        <div class="feature-card reveal delay-2">
-          <div class="feature-icon-box">👓</div>
-          <h3>Elder Friendly & High Contrast</h3>
-          <p>
-            Tailored specifically for older adults and family members who struggle with tiny fonts 
-            or complicated menus.
-          </p>
-          <ul class="feature-list">
-            <li>Elder Mode: Jumbo text and oversized touch buttons</li>
-            <li>Spoken voice reminders in Hindi and English</li>
-            <li>Full Dark Mode for comfortable night viewing</li>
-          </ul>
-        </div>
-
-        <!-- Feature 6 -->
-        <div class="feature-card highlight reveal delay-3">
-          <div class="feature-icon-box">🔒</div>
-          <h3>100% Privacy & Keystore Security</h3>
-          <p>
-            No user account, no login, no cloud database. Your sensitive health data never leaves 
-            your device and is protected by hardware encryption.
-          </p>
-          <ul class="feature-list">
-            <li>No INTERNET permission requested in Android Manifest</li>
-            <li>Encrypted with Android Keystore key</li>
-            <li>Biometric Fingerprint / Face App Lock</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Screenshot Gallery / Showcase -->
-  <section class="showcase-section" id="showcase">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag">Visual Walkthrough</div>
-        <h2 class="section-title">Designed with clarity, warmth, and care</h2>
-        <p class="section-desc">Take a look inside the MediBell experience across daily routine, alarms, and health tracking.</p>
-      </div>
-
-      <div class="showcase-tabs reveal delay-1">
-        <button class="showcase-tab active" data-filter="all">All Screens</button>
-        <button class="showcase-tab" data-filter="alarm">Alarms & Today</button>
-        <button class="showcase-tab" data-filter="schedule">Schedules</button>
-        <button class="showcase-tab" data-filter="health">Health & Reports</button>
-      </div>
-
-      <div class="showcase-carousel reveal reveal-fade-in delay-2">
-        <div class="showcase-item" data-category="alarm">
-          <img src="assets/screenshots/01_today.png" alt="Today Schedule" loading="lazy">
-          <div class="showcase-info">
-            <h4>Today at a Glance</h4>
-            <p>Next dose with countdown timer</p>
-          </div>
-        </div>
-
-        <div class="showcase-item" data-category="alarm">
-          <img src="assets/screenshots/02_alarm.png" alt="Full Screen Alarm" loading="lazy">
-          <div class="showcase-info">
-            <h4>Lockscreen Alarm</h4>
-            <p>One-tap Taken, Snooze, or Skip</p>
-          </div>
-        </div>
-
-        <div class="showcase-item" data-category="schedule">
-          <img src="assets/screenshots/03_medicines.png" alt="Medicines List" loading="lazy">
-          <div class="showcase-info">
-            <h4>Medicine Cabinet</h4>
-            <p>Stock counts and refill warnings</p>
-          </div>
-        </div>
-
-        <div class="showcase-item" data-category="schedule">
-          <img src="assets/screenshots/04_add_medicine.png" alt="Add Medicine" loading="lazy">
-          <div class="showcase-info">
-            <h4>Add Medication</h4>
-            <p>Dose units, food rules & instructions</p>
-          </div>
-        </div>
-
-        <div class="showcase-item" data-category="schedule">
-          <img src="assets/screenshots/05_schedule_rules.png" alt="Schedule Rules" loading="lazy">
-          <div class="showcase-info">
-            <h4>Custom Rules</h4>
-            <p>Alternating days & course durations</p>
-          </div>
-        </div>
-
-        <div class="showcase-item" data-category="health">
-          <img src="assets/screenshots/06_history.png" alt="Dose History" loading="lazy">
-          <div class="showcase-info">
-            <h4>Adherence History</h4>
-            <p>Calendar logs & compliance charts</p>
-          </div>
-        </div>
-
-        <div class="showcase-item" data-category="health">
-          <img src="assets/screenshots/07_health_log.png" alt="Health Log" loading="lazy">
-          <div class="showcase-info">
-            <h4>Vitals Log</h4>
-            <p>Blood pressure, sugar & pulse logs</p>
-          </div>
-        </div>
-
-        <div class="showcase-item" data-category="health">
-          <img src="assets/screenshots/08_settings.png" alt="Settings & Privacy" loading="lazy">
-          <div class="showcase-info">
-            <h4>Settings & Security</h4>
-            <p>App lock, dark mode & backup</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Privacy Comparison Table -->
-  <section class="comparison-section" id="privacy-first">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag">Privacy By Architecture</div>
-        <h2 class="section-title">How MediBell compares to other medication apps</h2>
-        <p class="section-desc">Health data is deeply personal. We believe it should stay solely between you and your phone.</p>
-      </div>
-
-      <div class="comparison-card reveal delay-1">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Feature / Standard</th>
-              <th>Typical Medication Apps</th>
-              <th>MediBell</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Internet Access Permission</strong></td>
-              <td>Required (sends data to cloud servers)</td>
-              <td><span class="badge-check">✓ Zero (No internet permission)</span></td>
-            </tr>
-            <tr>
-              <td><strong>Account & Sign-in</strong></td>
-              <td>Requires Email, Google, or Phone login</td>
-              <td><span class="badge-check">✓ None (Open app and use)</span></td>
-            </tr>
-            <tr>
-              <td><strong>Advertising & Tracking SDKs</strong></td>
-              <td>Yes (Facebook Ads, Google Analytics, etc.)</td>
-              <td><span class="badge-check">✓ 0 Trackers, 0 Ad SDKs</span></td>
-            </tr>
-            <tr>
-              <td><strong>Alarm on Locked / Silent Screen</strong></td>
-              <td>Often delayed or blocked by battery saving</td>
-              <td><span class="badge-check">✓ Exact Alarm & Full Screen Intent</span></td>
-            </tr>
-            <tr>
-              <td><strong>On-Device Encryption</strong></td>
-              <td>Often plain unencrypted SQLite</td>
-              <td><span class="badge-check">✓ Android Keystore Hardware Encrypted</span></td>
-            </tr>
-            <tr>
-              <td><strong>Pricing Model</strong></td>
-              <td>Monthly subscriptions & premium tiers</td>
-              <td><span class="badge-check">✓ 100% Free & Open</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag">Frequently Asked Questions</div>
-        <h2 class="section-title">Got questions? We have clear answers.</h2>
-        <p class="section-desc">Everything you need to know about how MediBell keeps your medication schedule on track.</p>
-      </div>
-
-      <div class="faq-list">
-        <div class="faq-item open reveal delay-1">
-          <button class="faq-question">
-            <span>Will the alarm ring if my phone is locked or set to silent?</span>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Yes! MediBell utilizes Android's <code>USE_FULL_SCREEN_INTENT</code> and <code>SCHEDULE_EXACT_ALARM</code> 
-              permissions. When an alarm time arrives, it wakes up the screen and rings like an alarm clock, allowing you 
-              to take, snooze, or skip the dose without unlocking your device. For critical medications, it can bypass 
-              silent mode.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal delay-2">
-          <button class="faq-question">
-            <span>Why does MediBell have no internet permission?</span>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Privacy policies are promises, but lack of internet permission is a mathematical guarantee. 
-              By not including <code>android.permission.INTERNET</code> in the app's manifest, Android OS physically prevents 
-              MediBell from sending any data over Wi-Fi or cellular networks. Your medical history cannot leak to any remote server.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal delay-3">
-          <button class="faq-question">
-            <span>Can I export reports for my doctor?</span>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Yes. MediBell allows you to generate a clean, professional clinical PDF report showing your medication list, 
-              intake adherence rate (taken, missed, skipped), and logged health vitals (Blood Pressure, Sugar, Weight). 
-              You can save it to your phone and email or print it for your doctor.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal delay-1">
-          <button class="faq-question">
-            <span>Does MediBell speak medication names in Hindi?</span>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Yes. MediBell supports full Text-to-Speech voice announcements in both English and Hindi. 
-              When the alarm rings, it can read out loud: <em>"दवा का समय: पैरासिटामोल 1 गोली खाने के बाद"</em>, 
-              which is especially helpful for elderly parents and patients.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal delay-2">
-          <button class="faq-question">
-            <span>How do I back up my medicines if there is no cloud?</span>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            <p>
-              MediBell provides an offline Backup & Restore feature in Settings. You can export a backup file 
-              to your device's Downloads folder, an SD card, or share it safely via your own secure cloud storage 
-              (like Google Drive) using Android's native file picker.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal delay-3">
-          <button class="faq-question">
-            <span>Is MediBell a certified medical device?</span>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            <p>
-              No. MediBell is strictly a personal scheduling and reminder utility. It does not diagnose, prescribe, 
-              or alter medication treatments. Always consult your qualified healthcare practitioner or pharmacist for 
-              medical guidance.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Download CTA Banner -->
-  <section class="cta-banner" id="download">
-    <div class="container">
-      <div class="cta-box reveal reveal-scale">
-        <h2>Take Control of Your Health Schedule Today</h2>
-        <p>No registration, no tracking, no subscription fees. Download MediBell now and set your first reminder in seconds.</p>
-        <div class="cta-actions">
-          <a href="https://play.google.com/store/apps/details?id=com.rhythm.medibell" class="btn btn-orange btn-lg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-1.637V3.451c0-.623.23-1.19.61-1.637zM15.207 13.414l2.424 2.424-11.45 6.611 9.026-9.035zm0-2.828L6.18 1.551l11.45 6.611-2.423 2.424zm1.414 1.414l3.187 1.84c.884.51.884 1.348 0 1.859l-3.187 1.84-2.122-2.121 2.122-2.718z"/>
-            </svg>
-            Download on Google Play
-          </a>
-          <a href="privacy.html" class="btn btn-secondary btn-lg">
-            Read Privacy Policy
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand">
-            <img src="assets/icon-512.png" alt="MediBell Icon" class="brand-icon">
-            <span>MediBell</span>
-          </div>
-          <p>
-            MediBell: Pill Reminder Alarm. Private, secure, and reliable offline medication reminders for individuals and families.
-          </p>
-          <div class="disclaimer-box">
-            <strong>Medical Disclaimer:</strong> MediBell is an independent reminder tool. It does not provide medical advice, diagnosis, or treatment recommendations. Always follow the directions of your physician.
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="#features">Key Features</a></li>
-            <li><a href="#showcase">App Screenshots</a></li>
-            <li><a href="#privacy-first">Privacy Architecture</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Legal & Policy</h4>
-          <ul class="footer-links">
-            <li><a href="privacy.html">Privacy Policy (English & हिंदी)</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="privacy.html#permissions">Permission Declarations</a></li>
-            <li><a href="privacy.html#data-safety">Google Play Data Safety</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Support & Contact</h4>
-          <ul class="footer-links">
-            <li><a href="mailto:devlopersa30@gmail.com">devlopersa30@gmail.com</a></li>
-            <li><span style="font-size:0.88rem; color:var(--ink-muted);">Package: com.rhythm.medibell</span></li>
-            <li><span style="font-size:0.88rem; color:var(--ink-muted);">Developer: RhythmSoft</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
+      <div class="footer-bottom-row">
         <div>&copy; 2026 MediBell (RhythmSoft). All rights reserved.</div>
-        <div>Designed with privacy & care.</div>
+        <div style="font-size:0.8rem; color:var(--ink-muted);">
+          MediBell is a medication reminder tool and does not provide medical advice.
+        </div>
       </div>
     </div>
   </footer>

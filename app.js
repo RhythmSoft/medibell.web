@@ -1,6 +1,6 @@
-// MediBell Interactive & Animated Scripts
+// MediBell Interactive Scripts (Matching Claude Artifact UI)
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Theme Manager (Dark / Light)
+  // 1. Theme Manager
   const themeToggle = document.getElementById('theme-toggle');
   const storedTheme = localStorage.getItem('medibell-theme');
   const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.documentElement.setAttribute('data-theme', 'dark');
       if (themeToggle) {
         themeToggle.innerHTML = `
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -21,16 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>`;
-        themeToggle.setAttribute('aria-label', 'Switch to light mode');
       }
     } else {
       document.documentElement.removeAttribute('data-theme');
       if (themeToggle) {
         themeToggle.innerHTML = `
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>`;
-        themeToggle.setAttribute('aria-label', 'Switch to dark mode');
       }
     }
   }
@@ -50,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Navbar Scroll Effect
-  const header = document.querySelector('.header');
+  // 2. Navbar Scroll Shadow
+  const header = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
       header?.classList.add('scrolled');
@@ -60,203 +58,91 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  // 3. Mobile Menu Toggle
-  const mobileBtn = document.getElementById('mobile-menu-btn');
-  const navLinks = document.getElementById('nav-links');
-
-  if (mobileBtn && navLinks) {
-    mobileBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      const isOpen = navLinks.classList.contains('open');
-      mobileBtn.setAttribute('aria-expanded', isOpen);
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-      });
-    });
-  }
-
-  // 4. Scroll Reveal Animations (Intersection Observer)
-  const revealElements = document.querySelectorAll('.reveal, .reveal-fade-in, .reveal-scale');
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      root: null,
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
-    });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-  } else {
-    revealElements.forEach(el => el.classList.add('is-visible'));
-  }
-
-  // 5. 3D Tilt Effect on Hero Phone Mockup (Desktop)
-  const mockupWrapper = document.querySelector('.mockup-wrapper');
-  const phoneDevice = document.querySelector('.phone-device');
-
-  if (mockupWrapper && phoneDevice && window.matchMedia('(pointer: fine)').matches) {
-    mockupWrapper.addEventListener('mousemove', (e) => {
-      const rect = mockupWrapper.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      const rotateX = ((y - centerY) / centerY) * -12;
-      const rotateY = ((x - centerX) / centerX) * 12;
-
-      phoneDevice.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
-
-    mockupWrapper.addEventListener('mouseleave', () => {
-      phoneDevice.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    });
-  }
-
-  // 6. Interactive Alarm Sound & Vibration Simulator
-  const simBtn = document.getElementById('sim-alarm-btn');
-  let audioCtx = null;
-  let isAlarmRinging = false;
-  let ringInterval = null;
-
-  function playChimeNote(freq, startTime, duration) {
-    if (!audioCtx) return;
-    try {
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(freq, startTime);
-      
-      gain.gain.setValueAtTime(0.18, startTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
-
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start(startTime);
-      osc.stop(startTime + duration);
-    } catch (e) {
-      // Audio not permitted or interrupted
-    }
-  }
-
-  function ringAlarmCycle() {
-    if (!audioCtx) return;
-    const now = audioCtx.currentTime;
-    playChimeNote(587.33, now, 0.25); // D5
-    playChimeNote(880.00, now + 0.15, 0.35); // A5
-    playChimeNote(1174.66, now + 0.35, 0.45); // D6
-  }
-
-  if (simBtn && phoneDevice) {
-    simBtn.addEventListener('click', () => {
-      if (!isAlarmRinging) {
-        // Start Alarm Simulation
-        isAlarmRinging = true;
-        phoneDevice.classList.add('vibrating');
-        simBtn.classList.add('active');
-        simBtn.innerHTML = `
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <rect x="6" y="6" width="12" height="12" rx="2"></rect>
-          </svg>
-          Stop Alarm Ringing
-        `;
-
-        try {
-          if (!audioCtx) {
-            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-          }
-          if (audioCtx.state === 'suspended') {
-            audioCtx.resume();
-          }
-          ringAlarmCycle();
-          ringInterval = setInterval(ringAlarmCycle, 1400);
-        } catch (e) {}
-
-        // Auto stop after 7 seconds
-        setTimeout(() => {
-          if (isAlarmRinging) {
-            stopAlarmSimulation();
-          }
-        }, 7000);
-      } else {
-        stopAlarmSimulation();
+  // 3. Mobile Navigation Toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      const isBlock = navMenu.style.display === 'flex';
+      navMenu.style.display = isBlock ? 'none' : 'flex';
+      if (!isBlock) {
+        navMenu.style.position = 'absolute';
+        navMenu.style.top = '72px';
+        navMenu.style.left = '0';
+        navMenu.style.right = '0';
+        navMenu.style.background = 'var(--surface)';
+        navMenu.style.flexDirection = 'column';
+        navMenu.style.padding = '20px';
+        navMenu.style.boxShadow = 'var(--shadow-lg)';
+        navMenu.style.borderBottom = '1px solid var(--border)';
       }
     });
+  }
 
-    function stopAlarmSimulation() {
-      isAlarmRinging = false;
-      phoneDevice.classList.remove('vibrating');
-      simBtn.classList.remove('active');
-      if (ringInterval) clearInterval(ringInterval);
-      simBtn.innerHTML = `
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-        </svg>
-        Simulate Alarm
-      `;
+  // 4. Interactive 3D Phone Tilt (Desktop)
+  const phoneContainer = document.getElementById('hero-phone');
+  if (phoneContainer && window.matchMedia('(pointer: fine)').matches) {
+    const parentCol = phoneContainer.closest('.hero-mockup-col');
+    if (parentCol) {
+      parentCol.addEventListener('mousemove', (e) => {
+        const rect = parentCol.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+
+        phoneContainer.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      parentCol.addEventListener('mouseleave', () => {
+        phoneContainer.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
     }
   }
 
-  // 7. Animated Number Counters (for Stats)
-  const counterElements = document.querySelectorAll('[data-counter]');
-  if ('IntersectionObserver' in window && counterElements.length > 0) {
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.getAttribute('data-counter'), 10);
-          const suffix = el.getAttribute('data-suffix') || '';
-          const prefix = el.getAttribute('data-prefix') || '';
-          let count = 0;
-          const duration = 1200;
-          const stepTime = 25;
-          const totalSteps = duration / stepTime;
-          const increment = target / totalSteps;
-
-          const timer = setInterval(() => {
-            count += increment;
-            if (count >= target) {
-              el.textContent = `${prefix}${target}${suffix}`;
-              clearInterval(timer);
-            } else {
-              el.textContent = `${prefix}${Math.floor(count)}${suffix}`;
-            }
-          }, stepTime);
-
-          observer.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    counterElements.forEach(el => counterObserver.observe(el));
+  // 5. Interactive "Taken" Demo Button on Mockup
+  const takenBtn = document.getElementById('mock-take-btn');
+  if (takenBtn) {
+    takenBtn.addEventListener('click', () => {
+      const originalText = takenBtn.textContent;
+      takenBtn.textContent = '🎉 Dose Recorded!';
+      takenBtn.style.background = '#10B981';
+      takenBtn.style.color = '#FFFFFF';
+      setTimeout(() => {
+        takenBtn.textContent = originalText;
+        takenBtn.style.background = '';
+        takenBtn.style.color = '';
+      }, 2500);
+    });
   }
 
-  // 8. FAQ Accordion
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    if (question) {
-      question.addEventListener('click', () => {
-        const isOpen = item.classList.contains('open');
-        faqItems.forEach(other => other.classList.remove('open'));
+  // 6. Day Chips Toggle in Bento Grid
+  const dayChips = document.querySelectorAll('.day-chip');
+  dayChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('active');
+    });
+  });
+
+  // 7. FAQ Accordion
+  const faqCards = document.querySelectorAll('.faq-card');
+  faqCards.forEach(card => {
+    const headerBtn = card.querySelector('.faq-header-btn');
+    if (headerBtn) {
+      headerBtn.addEventListener('click', () => {
+        const isOpen = card.classList.contains('open');
+        faqCards.forEach(c => c.classList.remove('open'));
         if (!isOpen) {
-          item.classList.add('open');
+          card.classList.add('open');
         }
       });
     }
   });
 
-  // 9. Privacy Policy Language Switcher (EN / HI)
+  // 8. Privacy Policy Language Switcher (for privacy.html)
   const langEnBtn = document.getElementById('lang-en-btn');
   const langHiBtn = document.getElementById('lang-hi-btn');
   const policyEn = document.getElementById('policy-content-en');
@@ -277,25 +163,4 @@ document.addEventListener('DOMContentLoaded', () => {
       policyHi.style.display = 'block';
     });
   }
-
-  // 10. Screenshot Category Filter
-  const tabs = document.querySelectorAll('.showcase-tab');
-  const items = document.querySelectorAll('.showcase-item');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const cat = tab.getAttribute('data-filter');
-
-      items.forEach(item => {
-        if (cat === 'all' || item.getAttribute('data-category') === cat) {
-          item.style.display = 'block';
-          item.style.animation = 'scaleIn 0.35s ease forwards';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-  });
 });
