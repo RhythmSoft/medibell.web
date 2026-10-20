@@ -11,7 +11,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/medibell_mark.svg">
   <link rel="alternate icon" type="image/png" href="assets/icon-512.png">
 
-  <!-- Google Fonts: Figtree -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,32 +21,32 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
+  <!-- Site Header -->
+  <header class="site-header">
     <div class="container">
-      <div class="nav-wrapper">
-        <a href="index.html" class="brand">
-          <img src="assets/icon-512.png" alt="MediBell Icon" class="brand-icon">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/icon-512.png" alt="MediBell Logo" class="brand-icon-img" width="36" height="36">
           <span>MediBell</span>
         </a>
 
-        <ul class="nav-links" id="nav-links">
+        <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="index.html#features" class="nav-link">Features</a></li>
-          <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+          <li><a href="index.html#how-it-works" class="nav-link">How it works</a></li>
           <li><a href="privacy.html" class="nav-link active">Privacy Policy</a></li>
           <li><a href="terms.html" class="nav-link">Terms</a></li>
         </ul>
 
-        <div class="nav-actions">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="header-actions">
+          <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
-          <a href="index.html#download" class="btn btn-primary btn-sm">Get App</a>
-          <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <a href="index.html#download" class="btn-header-cta">Get App</a>
+          <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -58,62 +58,63 @@
   </header>
 
   <!-- Privacy Policy Content -->
-  <main class="policy-page">
+  <main class="policy-main-section">
     <div class="container">
       
       <!-- Policy Header & Language Switcher -->
-      <div class="policy-header">
+      <div class="policy-hero-header">
         <h1>MediBell Privacy Policy</h1>
-        <p class="policy-meta">
+        <p class="policy-date-meta">
           Effective Date: October 17, 2026 · App: <strong>MediBell: Pill Reminder Alarm</strong> · Package: <code>com.rhythm.medibell</code>
         </p>
 
         <div class="policy-lang-switch">
-          <button id="lang-en-btn" class="lang-btn active">English</button>
-          <button id="lang-hi-btn" class="lang-btn">हिंदी (Hindi)</button>
+          <button id="lang-en-btn" class="lang-pill-btn active">English</button>
+          <button id="lang-hi-btn" class="lang-pill-btn">हिंदी (Hindi)</button>
         </div>
       </div>
 
-      <!-- Quick Summary Card -->
-      <div class="policy-summary-card">
-        <div class="summary-pill">
-          <div class="summary-pill-icon">📡</div>
+      <!-- Quick Summary Card Grid -->
+      <div class="policy-summary-grid">
+        <div class="summary-pill-box">
+          <div class="summary-icon">📡</div>
           <div>
             <strong>0 Internet Access</strong>
-            <span>Cannot transmit data off your device</span>
+            <span>Cannot transmit any data off your device</span>
           </div>
         </div>
 
-        <div class="summary-pill">
-          <div class="summary-pill-icon">🔐</div>
+        <div class="summary-pill-box">
+          <div class="summary-icon">🔐</div>
           <div>
             <strong>Hardware Encrypted</strong>
-            <span>Stored securely using Android Keystore</span>
+            <span>Secured via Android Keystore system</span>
           </div>
         </div>
 
-        <div class="summary-pill">
-          <div class="summary-pill-icon">🚫</div>
+        <div class="summary-pill-box">
+          <div class="summary-icon">🚫</div>
           <div>
             <strong>No Ads or Trackers</strong>
-            <span>No third-party SDKs or analytics</span>
+            <span>Zero advertising SDKs or analytics</span>
           </div>
         </div>
 
-        <div class="summary-pill">
-          <div class="summary-pill-icon">🗑️</div>
+        <div class="summary-pill-box">
+          <div class="summary-icon">🗑️</div>
           <div>
             <strong>Instant Deletion</strong>
-            <span>Clear app data or uninstall to wipe all records</span>
+            <span>Wipe everything in 1 click or uninstall</span>
           </div>
         </div>
       </div>
 
       <!-- ENGLISH POLICY CONTENT -->
       <div id="policy-content-en">
-        <div class="policy-layout">
+        <div class="policy-page-layout">
+          
           <!-- Sidebar Table of Contents -->
-          <aside class="policy-toc">
+          <aside class="policy-sidebar-toc">
             <h4>Contents</h4>
             <ul>
               <li><a href="#en-short">1. In Short</a></li>
@@ -130,8 +131,8 @@
             </ul>
           </aside>
 
-          <!-- Main Policy Body -->
-          <article class="policy-body">
+          <!-- Main Policy Article -->
+          <article class="policy-card-body">
             <h2 id="en-short">1. In Short</h2>
             <p>
               MediBell keeps everything strictly on your phone. It requires <strong>no account or sign-up</strong>, 
@@ -174,7 +175,7 @@
               lifesaving alarms that ring even when your device is asleep:
             </p>
 
-            <table class="permission-table">
+            <table class="policy-table">
               <thead>
                 <tr>
                   <th>Permission</th>
@@ -274,9 +275,9 @@
 
       <!-- HINDI POLICY CONTENT (Initially Hidden) -->
       <div id="policy-content-hi" style="display: none;">
-        <div class="policy-layout">
-          <!-- Sidebar Table of Contents -->
-          <aside class="policy-toc">
+        <div class="policy-page-layout">
+          
+          <aside class="policy-sidebar-toc">
             <h4>विषय सूची</h4>
             <ul>
               <li><a href="#hi-short">1. संक्षेप में</a></li>
@@ -291,8 +292,7 @@
             </ul>
           </aside>
 
-          <!-- Main Policy Body (Hindi) -->
-          <article class="policy-body" lang="hi">
+          <article class="policy-card-body" lang="hi">
             <h2 id="hi-short">1. संक्षेप में</h2>
             <p>
               मेडीबेल (MediBell) आपका सारा डेटा आपके फ़ोन में ही सुरक्षित रखता है। इसमें कोई अकाउंट या रजिस्ट्रेशन 
@@ -324,7 +324,7 @@
             </p>
 
             <h2 id="hi-permissions">5. Android Permissions की आवश्यकता क्यों है</h2>
-            <table class="permission-table">
+            <table class="policy-table">
               <thead>
                 <tr>
                   <th>अनुमति (Permission)</th>
@@ -402,56 +402,29 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <!-- Site Footer -->
+  <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand">
-            <img src="assets/icon-512.png" alt="MediBell Icon" class="brand-icon">
-            <span>MediBell</span>
-          </div>
-          <p>
-            Private, secure, and reliable offline medication reminders for individuals and families.
-          </p>
-          <div class="disclaimer-box">
-            <strong>Medical Disclaimer:</strong> MediBell is a reminder utility and does not provide medical advice or diagnosis. Always follow your physician's instructions.
-          </div>
+      <div class="footer-top">
+        <div class="brand-logo">
+          <img src="assets/icon-512.png" alt="MediBell Logo" class="brand-icon-img" width="36" height="36">
+          <span>MediBell</span>
         </div>
 
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#features">Features</a></li>
-            <li><a href="index.html#showcase">Screenshots</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Legal & Safety</h4>
-          <ul class="footer-links">
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="#en-permissions">Permissions Justification</a></li>
-            <li><a href="#en-data-safety">Google Play Data Safety</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact Developer</h4>
-          <ul class="footer-links">
-            <li><a href="mailto:devlopersa30@gmail.com">devlopersa30@gmail.com</a></li>
-            <li><span style="font-size:0.88rem; color:var(--ink-muted);">Package: com.rhythm.medibell</span></li>
-            <li><span style="font-size:0.88rem; color:var(--ink-muted);">Developer: RhythmSoft</span></li>
-          </ul>
-        </div>
+        <ul class="footer-nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Disclaimer</a></li>
+          <li><a href="mailto:devlopersa30@gmail.com">Contact</a></li>
+        </ul>
       </div>
 
-      <div class="footer-bottom">
+      <div class="footer-bottom-row">
         <div>&copy; 2026 MediBell (RhythmSoft). All rights reserved.</div>
-        <div>Zero tracking · 100% Offline</div>
+        <div style="font-size:0.8rem; color:var(--ink-muted);">
+          Zero tracking · 100% Offline
+        </div>
       </div>
     </div>
   </footer>
@@ -460,4 +433,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-
